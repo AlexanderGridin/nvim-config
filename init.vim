@@ -23,6 +23,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'APZelos/blamer.nvim'
 Plug 'jreybert/vimagit'
+Plug 'https://github.com/tpope/vim-fugitive'
 " Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
@@ -31,18 +32,23 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-" :colorscheme nord
+:colorscheme onedark
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
-autocmd BufWritePre,InsertLeave *.ts,*.js,*.css,*.scss,*.html Prettier
+autocmd BufWritePre *.ts,*.js,*.css,*.scss,*.html Prettier
+" InsertLeave
 
+let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#tabline#enabled = 1
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let g:blamer_enabled = 1
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+let g:airline_detect_modified=1
+
 
 " :CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-angular coc-emmet coc-html coc-git
 
