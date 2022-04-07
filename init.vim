@@ -5,7 +5,7 @@
 :set smarttab
 :set softtabstop=2
 :set mouse=a
-set encoding=utf8
+:set encoding=utf8
 
 call plug#begin()
 
