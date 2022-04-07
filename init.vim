@@ -39,6 +39,7 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 autocmd BufWritePre *.ts,*.js,*.css,*.scss,*.html Prettier
 " InsertLeave
 
+let g:airline_detect_modified=1
 let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#tabline#enabled = 1
 
@@ -47,7 +48,6 @@ let g:NERDTreeDirArrowCollapsible="~"
 let g:blamer_enabled = 1
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
-let g:airline_detect_modified=1
 
 
 " :CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-angular coc-emmet coc-html coc-git
